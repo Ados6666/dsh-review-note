@@ -17,7 +17,7 @@ note back as one structured result.
 
 ## Requirements
 
-- DeepSeek Harness with the Web client (`0.2.x`).
+- DeepSeek Harness `0.2.x`, opened in a **graphical** client: the desktop app, or a page served by `dsh web`. That UI is where the panel lives.
 - A profile you can install a bundle into.
 
 ## Install
@@ -134,7 +134,7 @@ still belongs to dsh-plan-note (which needs `dsh-plan-mode` enabled in the profi
 
 ## Limitations
 
-- Web client only; the terminal interface has no such panel.
+- The panel only exists in the web UI - the window you are looking at inside the desktop app, or a page served by `dsh web`. The CLI/TUI renders text only and has no sidebar to host it; both talk to the same session, the terminal just shows no panel.
 - Subagents cannot open a review (`userQuestions` rejects delegated callers), so the main
   agent has to aggregate and call the tool.
 - Markdown support is deliberately small: headings, lists, quotes, fenced code, pipe
