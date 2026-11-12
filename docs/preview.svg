@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="Delivery review panel: one highlighted passage in the document and three linked annotation cards">
+  <rect x="32" y="34" width="300" height="232" rx="10" fill="none" stroke="#8a8a8a" stroke-opacity="0.45" stroke-width="1.5" />
+  <rect x="52" y="54" width="118" height="8" rx="4" fill="#8a8a8a" fill-opacity="0.55" />
+  <rect x="52" y="80" width="238" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+  <rect x="52" y="96" width="204" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+  <rect x="46" y="110" width="246" height="18" rx="5" fill="#4d6bfe" fill-opacity="0.14" />
+  <rect x="46" y="110" width="3.5" height="18" rx="1.75" fill="#4d6bfe" fill-opacity="0.85" />
+  <rect x="56" y="116" width="214" height="6" rx="3" fill="#4d6bfe" fill-opacity="0.55" />
+  <rect x="52" y="140" width="228" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+  <rect x="52" y="156" width="180" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+  <rect x="52" y="180" width="238" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+  <rect x="52" y="196" width="150" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+  <rect x="52" y="220" width="96" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.2" />
+
+  <path d="M292 118 C324 118 328 72 356 72" fill="none" stroke="#4d6bfe" stroke-opacity="0.55" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M292 152 C324 152 328 158 356 158" fill="none" stroke="#8a8a8a" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M292 62 C326 62 326 244 356 244" fill="none" stroke="#8a8a8a" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" />
+
+  <rect x="356" y="40" width="252" height="64" rx="9" fill="#4d6bfe" fill-opacity="0.06" stroke="#4d6bfe" stroke-opacity="0.55" stroke-width="1.5" />
+  <circle cx="378" cy="66" r="7" fill="#4d6bfe" fill-opacity="0.18" stroke="#4d6bfe" stroke-opacity="0.8" stroke-width="1.5" />
+  <rect x="394" y="56" width="128" height="7" rx="3.5" fill="#4d6bfe" fill-opacity="0.6" />
+  <rect x="378" y="80" width="196" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.3" />
+  <path d="M570 88 l6 6 l11 -13" fill="none" stroke="#4d6bfe" stroke-opacity="0.85" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  <rect x="356" y="126" width="252" height="64" rx="9" fill="none" stroke="#8a8a8a" stroke-opacity="0.4" stroke-width="1.5" />
+  <circle cx="378" cy="152" r="7" fill="#8a8a8a" fill-opacity="0.14" stroke="#8a8a8a" stroke-opacity="0.55" stroke-width="1.5" />
+  <rect x="394" y="142" width="96" height="7" rx="3.5" fill="#8a8a8a" fill-opacity="0.45" />
+  <rect x="378" y="166" width="180" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+
+  <rect x="356" y="212" width="252" height="64" rx="9" fill="none" stroke="#8a8a8a" stroke-opacity="0.4" stroke-width="1.5" />
+  <circle cx="378" cy="238" r="7" fill="#8a8a8a" fill-opacity="0.14" stroke="#8a8a8a" stroke-opacity="0.55" stroke-width="1.5" />
+  <rect x="394" y="228" width="112" height="7" rx="3.5" fill="#8a8a8a" fill-opacity="0.45" />
+  <rect x="378" y="252" width="150" height="6" rx="3" fill="#8a8a8a" fill-opacity="0.28" />
+</svg>

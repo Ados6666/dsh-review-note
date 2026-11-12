@@ -1,0 +1,66 @@
+{
+  "name": "dsh-review-note",
+  "version": "0.1.0",
+  "description": "Annotate a pending delivery review item by item, and turn multi-question confirmations into one annotatable sheet.",
+  "type": "module",
+  "license": "MIT",
+  "author": "dsh-review-note contributors",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "review",
+    "annotation",
+    "human-in-the-loop"
+  ],
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/review-format.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "README.md",
+    "README.zh-CN.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "icon": "./icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ados6666/dsh-review-note.git"
+  },
+  "homepage": "https://github.com/Ados6666/dsh-review-note#readme",
+  "bugs": {
+    "url": "https://github.com/Ados6666/dsh-review-note/issues"
+  },
+  "scripts": {
+    "test": "node --check lib/client.js && node --check lib/index.js && node --test test/*.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

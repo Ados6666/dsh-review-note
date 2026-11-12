@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Checkpoint review notes",
+    "description": "Turns a pending delivery review into one annotatable sheet in the right sidebar: highlight any passage of the deliverable, comment on each decision point, and send the notes back to the agent as structured JSON. While enabled it also takes over any ask_user_question that carries 3 or more questions, so a long confirmation is answered on one screen instead of one card per question; single-question prompts keep the native card. Web client only. Nothing is sent anywhere: notes travel through the local session, and drafts live in this browser's session storage.",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,17 @@
+# One Loader row: the Host half registers the request_review tool and the
+# prompt section; the browser bundle is discovered through package.json#dsh.client.
+- insert:
+    - id: review-note
+      name: 'dsh-review-note'
+      config:
+        # 系统提示词里是否注入「阶段交付评审」使用说明。
+        promptSection: true
+        # 单次评审正文与条目的上限，超限工具直接报错。
+        maxDetailChars: 40000
+        maxItems: 20
+        maxFiles: 4
+        # 交付件自动验收：present 成功后自动发起文件级评审（无需用户下指令）。
+        autoReviewPresent: true
+        autoReviewMinFiles: 1
+        # 同一会话两次自动验收的最小间隔（毫秒），避免连续调用堆叠面板。
+        autoReviewCooldownMs: 120000
