@@ -4,6 +4,26 @@ All notable changes to this project are documented in this file. The format
 follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this
 project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [0.1.1] - 2026-11-12
+
+### Fixed
+
+- Windows: the "open file" button built its resource address by string
+  concatenation, so `C:\Users\me\报告.docx` reached the URL unencoded and the
+  panel silently did nothing. The address is now built the way the Harness
+  builds it (backslashes normalized, every segment percent-encoded, drive-letter
+  colon preserved, workspace-relative paths kept relative).
+- Windows: the automatic delivery review took the file name by splitting on `/`,
+  so a Windows path produced a prompt containing the whole path. The last
+  segment is now taken across both separators.
+
+### Added
+
+- The test suite covers both path styles (POSIX and Windows drive/UNC paths) and
+  CI runs on `ubuntu-latest`, `windows-latest` and `macos-latest`.
+
 ## [0.1.0] - 2026-11-12
 
 ### Added

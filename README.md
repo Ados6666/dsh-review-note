@@ -19,6 +19,7 @@ note back as one structured result.
 
 - DeepSeek Harness `0.2.x`, opened in a **graphical** client: the desktop app, or a page served by `dsh web`. That UI is where the panel lives.
 - A profile you can install a bundle into.
+- Platform: macOS, Windows and Linux. There are no shell commands and no hand-rolled path joins; Windows drive paths (`C:\Users\...`), UNC paths and file names with spaces or non-ASCII characters are percent-encoded per URI rules, and CI runs the suite on all three platforms.
 
 ## Install
 

@@ -125,4 +125,31 @@ const list = (value) => Array.from(value);
   assert.equal(blocks[0].type, "pre");
 }
 
+// Resource addresses must survive Windows paths, drive letters and spaces.
+{
+  const { fileAddressFor, baseNameOf } = plugin.internal;
+  const prefix = "dsh-resource://file/session/";
+
+  assert.equal(fileAddressFor("s1", undefined, "docs/a.md"), prefix + "s1/docs/a.md");
+  assert.equal(fileAddressFor("s1", undefined, "docs\\a.md"), prefix + "s1/docs/a.md");
+  assert.equal(fileAddressFor("s1", undefined, "./out/a.docx"), prefix + "s1/out/a.docx");
+  assert.equal(
+    fileAddressFor("s1", undefined, "C:\\Users\\me\\\u62a5\u544a\u7ec8\u7a3f.docx"),
+    prefix + "s1/C:/Users/me/" + encodeURIComponent("\u62a5\u544a\u7ec8\u7a3f.docx"),
+  );
+  assert.equal(fileAddressFor("s1", "C:\\work", "C:\\work\\out\\a.docx"), prefix + "s1/out/a.docx");
+  assert.equal(fileAddressFor("s1", "/home/me/proj", "/home/me/proj/x/y.md"), prefix + "s1/x/y.md");
+  assert.equal(fileAddressFor("s1", "/home/me/proj", "/tmp/other.md"), prefix + "s1//tmp/other.md");
+  assert.equal(fileAddressFor("s 1", undefined, "a b.md"), prefix + "s%201/a%20b.md");
+
+  // Whatever the platform, the address still parses as a file resource.
+  const url = new URL(fileAddressFor("s1", undefined, "C:\\Users\\me\\a.docx"));
+  assert.equal(url.hostname, "file");
+  assert.equal(url.pathname, "/session/s1/C:/Users/me/a.docx");
+
+  assert.equal(baseNameOf("C:\\a\\b.docx"), "b.docx");
+  assert.equal(baseNameOf("/a/b.md"), "b.md");
+  assert.equal(baseNameOf("b.md"), "b.md");
+}
+
 console.log("client: all assertions passed");

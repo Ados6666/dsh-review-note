@@ -1,6 +1,6 @@
 {
   "name": "dsh-review-note",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Annotate a pending delivery review item by item, and turn multi-question confirmations into one annotatable sheet.",
   "type": "module",
   "license": "MIT",

@@ -12,6 +12,7 @@
 
 - DeepSeek Harness `0.2.x`，用**带界面**的客户端打开（桌面应用，或 `dsh web` 打开的页面；面板就长在这个界面里）。
 - 一个可安装 bundle 的 profile。
+- 系统：macOS / Windows / Linux 均可。插件里没有 shell 命令、没有平台相关路径拼接，Windows 盘符路径（`C:\Users\...`）、UNC 路径和含空格/中文的文件名都按 URI 规则编码；CI 在三个平台上各跑一遍测试。
 
 ## 安装
 

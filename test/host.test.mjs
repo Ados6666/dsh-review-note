@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
-import { apply } from '../lib/index.js';
-import { encodeAnswer, encodeRequest } from '../lib/review-format.js';
+import { apply, internal } from '../lib/index.js';
+import { decodeRequest, encodeAnswer, encodeRequest } from '../lib/review-format.js';
 
 function makeContext(initialAnswer) {
   const captured = { listeners: {} };
@@ -181,6 +181,29 @@ const exec = { agent: { id: 'a1' }, signal: undefined, concluded: false, conclud
     passthrough,
   );
   assert.equal(failed.content, undefined);
+}
+
+// Windows paths: the basename of a delivery file, and the auto-review prompt built from it.
+{
+  assert.equal(internal.baseName('C:\\Users\\me\\报告.docx'), '报告.docx');
+  assert.equal(internal.baseName('C:/Users/me/report.docx'), 'report.docx');
+  assert.equal(internal.baseName('/tmp/a.docx'), 'a.docx');
+  assert.equal(internal.baseName('a.docx'), 'a.docx');
+  assert.equal(internal.baseName('\\\\server\\share\\x.md'), 'x.md');
+
+  const approved = { answers: [{ id: 'review', selected: ['全部通过'] }] };
+  const { ctx, captured } = makeContext(approved);
+  apply(ctx, {});
+  const windowsExec = {
+    name: 'present',
+    agent: { id: 'a1', session: { id: 's-win' } },
+    arguments: { files: [{ path: 'C:\\Users\\me\\out\\报告终稿.docx', description: '报告底稿' }] },
+    signal: undefined,
+  };
+  await captured.listeners['tools/post-execute'](windowsExec, { content: [] }, async () => ({ kind: 'accept' }));
+  const { meta } = decodeRequest(captured.request.questions[0].detail);
+  assert.equal(meta.items[0].prompt, '「报告终稿.docx」是否达到交付要求？');
+  assert.deepEqual(meta.files, ['C:\\Users\\me\\out\\报告终稿.docx']);
 }
 
 console.log('host: all assertions passed');
