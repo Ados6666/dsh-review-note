@@ -134,7 +134,7 @@ still belongs to dsh-plan-note (which needs `dsh-plan-mode` enabled in the profi
 
 ## Limitations
 
-- The panel only exists in the web UI - the window you are looking at inside the desktop app, or a page served by `dsh web`. The CLI/TUI renders text only and has no sidebar to host it; both talk to the same session, the terminal just shows no panel.
+- The panel lives in the web UI - the window you are looking at inside the desktop app, or a page served by `dsh web`. That is the only conversation surface DSH ships today; there is no terminal chat client, so the panel does not appear anywhere else.
 - Subagents cannot open a review (`userQuestions` rejects delegated callers), so the main
   agent has to aggregate and call the tool.
 - Markdown support is deliberately small: headings, lists, quotes, fenced code, pipe
